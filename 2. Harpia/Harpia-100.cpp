@@ -28,13 +28,13 @@ Library versions
 +-----------------------------------------+------------------+-------------------------- +
 |       Library                           |     Version      |          Creator          |
 +-----------------------------------------+------------------+-------------------------- +
-|	PubSubClient                            |     @^2.8        |      knolleary            |
-|	ArduinoJson                             |     @^6.18.5     |      bblanchon            |
-|	NTPClient                               |     @^3.1.0      |      arduino-libraries    |
-|	Firebase Library for ESP8266 and ESP32  |     @^2.7.5      |      mobizt               |
-|	LittleFS_esp32                          |     @^1.0.6      |      lorol                |
-|	OneWire                                 |     @^2.3.6      |      paulstoffregen       |
-|	DallasTemperature                       |     @^3.9.1      |      milesburton          |
+|	PubSubClient                            |     @^2.8        | knolleary           |
+|	ArduinoJson                             |     @^6.18.5     | bblanchon           |
+|	NTPClient                               |     @^3.1.0      | arduino-libraries   |
+|	Firebase Library for ESP8266 and ESP32  |     @^2.7.5      | mobizt              |
+|	LittleFS_esp32                          |     @^1.0.6      | lorol               |
+|	OneWire                                 |     @^2.3.6      | paulstoffregen      |
+|	DallasTemperature                       |     @^3.9.1      | milesburton         |
 +-----------------------------------------+------------------+-------------------------- +
 
 Upload settings 

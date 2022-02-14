@@ -28,15 +28,12 @@ Library versions
 +-----------------------------------------+------------------+-------------------------- +
 |       Library                           |     Version      |          Creator          |
 +-----------------------------------------+------------------+-------------------------- +
-| #include <ESP8266WiFi.h>                |      1.2.7       |     Arduino Community     |
-| #include <PubSubClient.h>               |      2.8.0       |     Nick O'Leary          |
-| #include <ArduinoJson.h>                |      6.18.5      |     Benoît Blanchon       |
-| #include <NTPClient.h>                  |      3.1.0       |     Arduino Community     |
-| #include <WiFiUdp.h>                    |                  |                           |
-| #include <ESP8266HTTPClient.h>          |      1.2.0       |     Markus Sattler        |
-| #include <OneWire.h>                    |      2.3.6       |     paulstoffregen        |    
-| #include <DallasTemperature.h>          |      3.9.1       |     milesburton           |
-! Driver for SSD1306 displays             |      4.2.1       |     thingpulse            |
+| PubSubClient                            |      @^2.8       |        knolleary          |
+|	ArduinoJson                             |      @^6.18.5    |        bblanchon          |
+|	NTPClient                               |      @^3.1.0     |        arduino-libraries  |  
+|	OneWire                                 |      @^2.3.6     |        paulstoffregen     |                           
+|	DallasTemperature                       |      @^3.9.1     |        milesburton        |
+|	ESP8266 ... driver for SSD1306 displays |      @^4.2.1     |        thingpulse         |
 +-----------------------------------------+------------------+-------------------------- +
 
 
@@ -83,12 +80,13 @@ Upload settings
  *| Constants declaration                                                                |
  *+--------------------------------------------------------------------------------------+ */
  
-const char *ssid =  "CasaDoTheodoro";                 // name of your WiFi network
+const char *ssid =  "CasaDoTheodoro1";                 // name of your WiFi network
 const char *password =  "09012011";                   // password of the WiFi network
 
 const char *ID = "SeriemaDev";                        // Name of our device, must be unique
 const char *TOPIC = "Seriema/data";                   // Topic to subcribe to
-const char* BROKER_MQTT = "mqtt.eclipseprojects.io";  // MQTT Cloud Broker URL
+//const char* BROKER_MQTT = "mqtt.eclipseprojects.io";  // MQTT Cloud Broker URL
+const char* BROKER_MQTT = "broker.hivemq.com";
 
 String swversion = __FILE__;
 
@@ -316,7 +314,7 @@ void SerializeAndPublish() {
       doc["RSSI (db)"] = WiFi.RSSI();
       doc["IP"] = WiFi.localIP();
       doc["LastRoll"] = DateAndTime();
-      doc["UpTime (h)"] = dtostrf(uptime, 5, 0, buff);
+      doc["UpTime (h)"] = uptime;
       doc["Temp (°C)"] = dtostrf(getTemp(), 2, 1, buff);
     
     serializeJson(doc, buffer);
@@ -522,9 +520,10 @@ void setup() {
   display.flipScreenVertically();
   display.clear();    
   
-  swversion = (swversion.substring((swversion.indexOf(".")), (swversion.lastIndexOf("\\")) + 1));   
+  swversion = (swversion.substring((swversion.indexOf(".")), (swversion.lastIndexOf("\\")) + 1))+" "+__DATE__+" "+__TIME__;   
    Serial.print("SW version: ");
    Serial.println(swversion);
+
       display.setFont(ArialMT_Plain_10);
       display.setTextAlignment(TEXT_ALIGN_LEFT);
       display.drawString(0, 0, swversion);            /* Display sw version */
@@ -562,7 +561,7 @@ void loop() {
 
   unsigned long currentMillis = millis();             /* capture the latest value of millis() */
   uptime = millis()/3600000;                          /* Update uptime */
-
+    
     
     /*------ Loop 03 sec ------*/
      

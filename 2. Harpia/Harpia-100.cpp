@@ -115,18 +115,18 @@ Upload settings
 #define HREF_GPIO_NUM     23
 #define PCLK_GPIO_NUM     22
 
-const char *ssid =  "CasaDoTheodoro1";                         // name of your WiFi network
-const char *password =  "09012011";                           // password of the WiFi network
+const char *ssid =  "here your wifi ID";                         // name of your WiFi network
+const char *password =  "here your wifi password";                           // password of the WiFi network
 
 const char *ID = "HarpiaDev";                                 // Name of our device, must be unique
 const char *TOPIC = "Harpia/data";                            // Topic to subcribe to
 const char* BROKER_MQTT = "broker.hivemq.com";                // MQTT Cloud Broker URL
 //const char* BROKER_MQTT = "mqtt.eclipseprojects.io";          // MQTT Cloud Broker URL
 
-#define API_KEY "AIzaSyBf7WojBEWf-2_1fOJVWFygrnbHK97wdCo"     // Firebase: Define the API Key 
-#define USER_EMAIL "flaviopuhljr@gmail.com"                   // Firebase: Define the user Email 
-#define USER_PASSWORD "Theodoro@01"                           // Firebase: Define password 
-#define STORAGE_BUCKET_ID "home-699f4.appspot.com"            // Firebase: Define the Firebase storage bucket ID e.g bucket-name.appspot.com 
+#define API_KEY "here your wifi Firebase API Key"     // Firebase: Define the API Key 
+#define USER_EMAIL "here your wifi Firebase email"                   // Firebase: Define the user Email 
+#define USER_PASSWORD "here your wifi Firebase user password"                           // Firebase: Define password 
+#define STORAGE_BUCKET_ID "here your wifi Firebase bucket"            // Firebase: Define the Firebase storage bucket ID e.g bucket-name.appspot.com 
 #define FILE_PHOTO_FS "/data/Harpia_photo.jpg"                // Photo File Name to save in File System
 
 boolean takeNewPhoto = true;

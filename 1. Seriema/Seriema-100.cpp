@@ -80,8 +80,8 @@ Upload settings
  *| Constants declaration                                                                |
  *+--------------------------------------------------------------------------------------+ */
  
-const char *ssid =  "CasaDoTheodoro1";                 // name of your WiFi network
-const char *password =  "09012011";                   // password of the WiFi network
+const char *ssid =  "here your wifi ID";                 // name of your WiFi network
+const char *password =  "here your wifi password";                   // password of the WiFi network
 
 const char *ID = "SeriemaDev";                        // Name of our device, must be unique
 const char *TOPIC = "Seriema/data";                   // Topic to subcribe to

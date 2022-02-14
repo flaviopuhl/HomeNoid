@@ -93,9 +93,9 @@ NTPClient timeClient(ntpUDP);
 WiFiClient wclient;
 PubSubClient client(wclient);                                 /* Setup MQTT client */
 
-#define user "fpuhl"                                          /* Thinger */
-#define device_Id "HomenoideGateway"                          /* Thinger */
-#define device_credentials "jt0J73!BihBvbXe7"                 /* Thinger */
+#define user "here your thinger user"                                          /* Thinger */
+#define device_Id "here your thinger device"                          /* Thinger */
+#define device_credentials "here your thinger credentials"                 /* Thinger */
 ThingerESP8266 thing(user, device_Id, device_credentials);    /* Thinger */
 
 /*+--------------------------------------------------------------------------------------+
